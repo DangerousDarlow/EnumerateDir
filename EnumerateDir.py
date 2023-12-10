@@ -34,6 +34,9 @@ def main():
             if 'Exposure' in relative_path:
                 continue
 
+            if 'Lightroom' in relative_path:
+                continue
+
             match = re.search(date_regex, relative_path)
             if not match:
                 continue
