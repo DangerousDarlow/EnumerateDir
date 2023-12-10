@@ -31,6 +31,9 @@ def main():
 
         for dir_path, dir_names, file_names in os.walk(root_path):
             relative_path = str(os.path.relpath(dir_path, root_path))
+            if 'Exposure' in relative_path:
+                continue
+
             match = re.search(date_regex, relative_path)
             if not match:
                 continue
